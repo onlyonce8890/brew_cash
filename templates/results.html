@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+</head>
+
 <body>
-    <h1>Results</h1>
-    <p>
-        You drink {{ beers_per_week }} beers per week. </p>
-    <p>
-        At €{{ cost_per_beer}} per beer, you are spending €{{ weekly_spend }} per week, and €{{ monthly_spend }} per month on beer. If you continue at this rate all year, you'll spend €{{ yearly_spend }}.
-    </p>
-    <p>
-        Replacing commerical beers with homebrew, over a year you would spend €{{ homebrew_yearly_spend }} and save €{{ homebrew_yearly_savings }}
-    </p>
+    <div class="container">
+        <div class="jumbotron jumbotron-default">
+            <h1>Estimates</h1>
+        </div>
+        <h2>Commercial Beer</h2>
+        <p>
+            You drink {{ beers_per_week }} beers per week. </p>
+        <p>
+            €{{ cost_per_beer}} per beer
+        </p>
+        <p>€{{ weekly_spend }} per week.</p>
+        <p>€{{ monthly_spend }} per month.</p>
+        <p>€{{ yearly_spend }} per year.
+        </p>
+        <h2>Homebrew</h2>
+        <p>
+            €{{ homebrew_yearly_spend }} per year
+        </p>
+        <div class="alert alert-success">
+            €{{ homebrew_yearly_savings }} saved per year.
+        </div>
+    </div>
 </body>
 
 </html>

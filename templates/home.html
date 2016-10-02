@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+</head>
+
 <body>
-    <h1>Lets see whether homebrewing will save you money.</h1>
-    <form action="." method="POST">
-        <label for="beers_per_week">How many beers do you drink per week?</label>
-        <input type="number" name="beers_per_week">
-        <label for="cost_per_beer">How much does each beer cost? (€)</label>
-        <input type="number" name="cost_per_beer">
-        <label for="cost_per_20l_homebrew">How much does 20L homebrew batch cost? (€)</label>
-        <input type="number" name="cost_per_20l_homebrew">
-        <input type="submit" name="calculate" value="Send">
-    </form>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Brew Cash</h1>
+            <p class="lead">Can you save money by homebrewing?</p>
+        </div>
+        <form action="." method="POST">
+            <div class="form-group">
+                <label for="beers_per_week">How many beers do you drink per week?</label>
+                <input class="form-control" type="number" name="beers_per_week">
+                <label for="cost_per_beer">How much does each beer cost? (€)</label>
+                <input class="form-control" type="number" name="cost_per_beer">
+                <label for="cost_per_20l_homebrew">How much does 20L homebrew batch cost? (€)</label>
+                <input class="form-control" placeholder="25" type="number" name="cost_per_20l_homebrew">
+                <input class="m-t-2 form-control" type="submit" name="calculate" value="Send">
+            </div>
+        </form>
+    </div>
 </body>
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">Built by <a href="http://focalise.ie">Focalise</a></span>
+    </div>
+</footer>
 
 </html>
