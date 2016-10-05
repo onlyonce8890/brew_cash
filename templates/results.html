@@ -3,31 +3,42 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <div class=page>
 </head>
+<style>
+</style>
 
 <body>
-    <div class="container">
-        <div class="jumbotron jumbotron-default">
-            <h1>Estimates</h1>
+    <section class="results">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>{{ beers_per_week }} beers per week</h1>
+            </div>
         </div>
-        <h2>Commercial Beer</h2>
-        <p>
-            You drink {{ beers_per_week }} beers per week. </p>
-        <p>
-            €{{ cost_per_beer}} per beer
-        </p>
-        <p>€{{ weekly_spend }} per week.</p>
-        <p>€{{ monthly_spend }} per month.</p>
-        <p>€{{ yearly_spend }} per year.
-        </p>
-        <h2>Homebrew</h2>
-        <p>
-            €{{ homebrew_yearly_spend }} per year
-        </p>
-        <div class="alert alert-success">
-            €{{ homebrew_yearly_savings }} saved per year.
+        <div class="container">
+            <h3>Cost</h3>
+            <p>
+                At €{{ cost_per_beer }} per beer:
+            </p>
+            <p>€{{ weekly_spend }} per week.</p>
+            <p>€{{ monthly_spend }} per month.</p>
+            <p>€{{ yearly_spend }} per year.
+            </p>
+            <h2>Homebrew</h2>
+            <p>
+                Cost: €{{ homebrew_yearly_spend }} per year
+            </p>
+            <div class="alert alert-success">
+                €{{ homebrew_yearly_savings }} saved per year.
+            </div>
         </div>
-    </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Built by <a href="http://focalise.ie">Focalise</a></span>
+        </div>
+    </footer>
 </body>
 
 </html>
