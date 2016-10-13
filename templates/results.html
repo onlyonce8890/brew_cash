@@ -3,7 +3,7 @@
 
 <head>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}"> {{ graph[0]|safe }}
 </head>
 <div class=page>
 
@@ -31,6 +31,10 @@
                     €{{ homebrew_yearly_savings }} saved per year.
                 </div>
             </div>
+            {% if graph != None %}
+            <!-- script and div elements for Bokeh plot -->
+            {{ graph[1]|safe }} {{ graph[2]|safe }} {% endif %}
+            <img src="data:image/png;base64,{{ graph }}" width="500">
         </section>
         <footer class="footer">
             <div class="container">

@@ -39,6 +39,8 @@ def calculate():
         tweet_text = tweet_text
     	)
 
+    
+
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""
