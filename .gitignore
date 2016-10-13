@@ -2,4 +2,4 @@
 # don't include third-party dependencies.
 !lib/README.md
 .DS_Store
-brew_cash
+brew_cashlib/
