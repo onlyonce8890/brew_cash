@@ -30,6 +30,14 @@
                 <div class="alert alert-success">
                     €{{ homebrew_yearly_savings }} saved per year.
                 </div>
+                <hr>
+                <form action="{{ url_for('process_response') }}" method="POST">
+                    <div class="form-group">
+                        <label for="response">What think ye of this?</label>
+                        <input type="textarea" class="form-control" name="response">
+                        <input class="m-t-2 form-control" type="submit" name="process_response" value="Send">
+                    </div>
+                </form>
                 <a class="btn btn-outline-primary" href="{{ url_for('home') }}">Recalculate
                 </a>
             </div>

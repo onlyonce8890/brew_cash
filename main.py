@@ -8,6 +8,13 @@ from flask import request
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 from flask import render_template
+from google.appengine.ext import ndb
+
+class Response(ndb.Model):
+    content = ndb.StringProperty()
+    date = ndb.DateTimeProperty(auto_now_add=True)
+
+
 
 @app.route('/')
 def home():
@@ -27,7 +34,6 @@ def calculate():
     homebrew_yearly_savings = yearly_spend - homebrew_yearly_spend
     tweet_text = "Does homebrewing save money? Find out with #brew_cash"
     
-
     return render_template("results.html",
     	beers_per_week = int(beers_per_week),
     	cost_per_beer = float(cost_per_beer),
@@ -39,7 +45,11 @@ def calculate():
         tweet_text = tweet_text
     	)
 
-    
+@app.route('/process_response', methods=['POST'])
+def process_response():
+    response = Response(content=request.form['response'])
+    return home()
+
 
 @app.errorhandler(404)
 def page_not_found(e):

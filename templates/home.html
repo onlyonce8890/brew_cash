@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="container">
-        <form action="." method="POST">
+        <form action="{{ url_for('calculate') }}" method="POST">
             <div class="form-group">
                 <label for="beers_per_week">How many beers do you drink per week?</label>
                 <input class="form-control" type="number" name="beers_per_week">
@@ -22,7 +22,7 @@
                 <input class="form-control" type="number" name="cost_per_beer">
                 <label for="cost_per_20l_homebrew">How much a does 20L homebrew batch cost? (€)</label>
                 <input class="form-control" placeholder="For me it's 25" step="0.01" type="number" name="cost_per_20l_homebrew">
-                <input class="m-t-2 form-control" type="submit" name="calculate" value="Send">
+                <input class="m-t-2 form-control" type="submit" value="Send">
             </div>
         </form>
 </body>
